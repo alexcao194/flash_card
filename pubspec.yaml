@@ -64,6 +64,8 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/image/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -89,16 +91,16 @@ flutter:
   #         weight: 700
   #
   fonts:
-    - family: alexandria
+    - family: Alexandria
       fonts:
         - asset: assets/font/alexandria/Alexandria-Regular.ttf
         - asset: assets/font/alexandria/Alexandria-Bold.ttf
-          style: bold
+          weight: 500
         - asset: assets/font/alexandria/Alexandria-Thin.ttf
-          style: thin
+          weight: 200
         - asset: assets/font/alexandria/Alexandria-SemiBold.ttf
-          style: semibold
+          weight: 300
         - asset: assets/font/alexandria/Alexandria-ExtraBold.ttf
-          style: extrabold
+          weight: 700
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,3 +1,4 @@
+import 'package:flash_card/config/app_font.dart';
 import 'package:flash_card/service/app_router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: AppRouter.navigatorKey,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: AppFont.alexandria
       ),
     );
   }
