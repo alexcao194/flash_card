@@ -18,7 +18,7 @@ class ChoiceButton extends StatelessWidget {
       child: TextButton(
           onPressed: () {},
           child: Container(
-            height: 50,
+            height: 45,
             width: double.maxFinite,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50.0),

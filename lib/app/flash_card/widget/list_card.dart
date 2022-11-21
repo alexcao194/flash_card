@@ -37,7 +37,7 @@ class _ListCardState extends State<ListCard> {
           diameterRatio: 100,
           itemExtent: size.width * 0.85,
           physics: const FixedExtentScrollPhysics(
-            parent: NeverScrollableScrollPhysics()
+
           ),
           children: buildBody(size)
         ),
@@ -46,58 +46,28 @@ class _ListCardState extends State<ListCard> {
   }
 
   List<Widget> buildBody(Size size) {
-    return [
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Container(
-          width: size.width * 0.7,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
-              color: Colors.white
-          ),
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Container(
-          width: size.width * 0.7,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
-              color: Colors.white
-          ),
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Container(
-          width: size.width * 0.7,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
-              color: Colors.white
-          ),
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Container(
-          width: size.width * 0.7,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
-              color: Colors.white
-          ),
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Container(
-          width: size.width * 0.7,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
-              color: Colors.white
-          ),
-        ),
-      ),
-    ];
+    List<Widget> result = [];
+    for(int i = 0; i < 5; i++) {
+      result.add(
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Container(
+              width: size.width * 0.7,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                  color: Colors.white
+              ),
+              child: const RotatedBox(
+                quarterTurns: 3,
+                child: Center(
+                  child: Text('Flutter', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 30)),
+                ),
+              ),
+            ),
+          )
+      );
+    }
+    return result;
   }
 
 }
