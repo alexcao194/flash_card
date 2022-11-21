@@ -37,13 +37,13 @@ class FlashCardSC extends StatelessWidget {
                     Expanded(
                       child: ChoiceButton(
                         color: AppColor.orange,
-                        label: "T don't know",
+                        label: "I don't know",
                       ),
                     ),
                     Expanded(
                       child: ChoiceButton(
                         color: AppColor.green,
-                        label: "T know",
+                        label: "I know",
                       ),
                     )
                   ],
