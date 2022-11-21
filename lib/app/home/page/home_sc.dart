@@ -6,7 +6,7 @@ class HomeSC extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+        body: Text('commit of lna'),
     );
   }
 }
