@@ -9,7 +9,7 @@ class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch(settings.name) {
       case AppRoutes.splash:
-        return MaterialPageRoute(builder: (_) => const FlashCardSC());
+        return MaterialPageRoute(builder: (_) => const HomeSC());
       case AppRoutes.home:
         return MaterialPageRoute(builder: (_) => const HomeSC());
       case AppRoutes.flashCard:
