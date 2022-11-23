@@ -102,7 +102,7 @@ class HomeSC extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const [
                     Expanded(child: Course()),
-                    SizedBox(width: 16.0),
+                    SizedBox(width: 20.0),
                     Expanded(child: Course()),
                   ],
                 ),

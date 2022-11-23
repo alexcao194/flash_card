@@ -17,10 +17,6 @@ class Course extends StatelessWidget {
               borderRadius: BorderRadius.circular(25),
             ),
           ),
-          Container(
-            height: 75,
-
-          )
         ],
 
       ),
