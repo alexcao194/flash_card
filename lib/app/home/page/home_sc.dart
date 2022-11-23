@@ -86,20 +86,26 @@ class HomeSC extends StatelessWidget {
                       ))
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  Course(),
-                  Course(),
-                ],
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: const [
+                    Expanded(child: Course()),
+                    SizedBox(width: 20.0),
+                    Expanded(child: Course()),
+                  ],
+                ),
               ),
               const SizedBox(height: 25),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  Course(),
-                  Course(),
-                ],
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: const [
+                    Expanded(child: Course()),
+                    SizedBox(width: 16.0),
+                    Expanded(child: Course()),
+                  ],
+                ),
               ),
             ],
           ),
