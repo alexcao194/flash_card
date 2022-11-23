@@ -1,6 +1,10 @@
+import 'package:flash_card/app/home/widget/counter.dart';
 import 'package:flash_card/config/app_color.dart';
+import 'package:flash_card/config/app_path.dart';
+import 'package:flash_card/service/app_router/app_router.dart';
 import 'package:flutter/material.dart';
-import 'course.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import '../widget/course.dart';
 
 class HomeSC extends StatelessWidget {
   const HomeSC({Key? key}) : super(key: key);
@@ -10,13 +14,6 @@ class HomeSC extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.blue,
       body: Stack(children: [
-        // Container(
-        //   height: 200,
-        //   decoration: const BoxDecoration(
-        //     borderRadius: BorderRadius.vertical(bottom: Radius.circular(25)),
-        //     color: Colors.deepPurple,
-        //   ),
-        // ),
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -34,43 +31,53 @@ class HomeSC extends StatelessWidget {
                       ),
                       Text(
                         "Let's start together",
-                        style: TextStyle(fontSize: 17, color: Colors.white,),
+                        style: TextStyle(fontSize: 17, color: Colors.white),
                       ),
                     ],
                   ),
                 ),
                 Container(
+                  height: 50,
+                  width: 50,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
                   ),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.notifications_outlined),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(100.0),
+                    child: Image.asset(AppPath.avatarImage, fit: BoxFit.cover)
                   ),
                 ),
               ]),
-              Container(
-                height: 50,
-                width: 350,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(50), color: Colors.white70),
-                child: const TextField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    prefixIcon: Icon(Icons.find_in_page_rounded),
-                    hintText: 'Search your course',
-                    suffixIcon: Icon(Icons.mic),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: const [
+                  Counter(
+                    label: 'Memorized',
+                    color: AppColor.orange,
+                    counter: 5,
                   ),
-                ),
+                  Counter(
+                    label: 'Added',
+                    color: AppColor.violet,
+                    counter: 12,
+                  ),
+                  Counter(
+                    label: 'Approved',
+                    color: AppColor.green,
+                    counter: 137,
+                  )
+                ],
               ),
               const SizedBox(height: 40),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    "Explore categories",
+                    "Let's start",
                     style: TextStyle(
                       fontSize: 23,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -89,10 +96,19 @@ class HomeSC extends StatelessWidget {
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: const [
-                    Expanded(child: Course()),
-                    SizedBox(width: 20.0),
-                    Expanded(child: Course()),
+                  children: [
+                    Expanded(child: Course(
+                      label: 'Learning',
+                      child: SvgPicture.asset(AppPath.learnIcon),
+                      onTap: () {
+                        AppRouter.navigatorKey.currentState?.pushNamed(AppRoutes.flashCard);
+                      },
+                    )),
+                    const SizedBox(width: 20.0),
+                    Expanded(child: Course(
+                      label: 'Contesting',
+                      child: SvgPicture.asset(AppPath.doneIcon),
+                    )),
                   ],
                 ),
               ),
@@ -100,10 +116,16 @@ class HomeSC extends StatelessWidget {
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: const [
-                    Expanded(child: Course()),
-                    SizedBox(width: 16.0),
-                    Expanded(child: Course()),
+                  children: [
+                    Expanded(child: Course(
+                      label: 'Add',
+                      child: SvgPicture.asset(AppPath.addIcon),
+                    )),
+                    const SizedBox(width: 20.0),
+                    Expanded(child: Course(
+                      label: 'Modify',
+                      child: SvgPicture.asset(AppPath.modifyIcon),
+                    )),
                   ],
                 ),
               ),
